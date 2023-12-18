@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
 import { useGetOrdersMutation } from '../../features/usersApiSlice';
 import { placedOrders } from '../../features/authSlice';
@@ -10,6 +10,7 @@ function Orders() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    console.log(authState.userInfo.email)
     async function getOrdersData() {
       try {
         const res = await getOrders({ orderedBy: authState.userInfo.email })
@@ -19,9 +20,8 @@ function Orders() {
       }
     }
     getOrdersData()
-  })
+  }, [dispatch])
   return (
-    <span>
       <Container>
         <h1 className="display-6 text-center border-bottom">Orders</h1>
         <Container>
@@ -38,7 +38,6 @@ function Orders() {
           }</p>
         </Container>
       </Container >
-    </span>
   )
 }
 
