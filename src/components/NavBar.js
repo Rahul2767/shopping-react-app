@@ -31,13 +31,13 @@ function NavBar() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary position-sticky fixed-top border">
             <Container fluid>
-                <Nav.Link to={'/'}><Navbar.Brand href="#home" className='ms-2'> <img
+                <Nav.Link><Navbar.Brand className='ms-2'> <Link to={'/'}><img
                     src='https://www.liblogo.com/img-logo/max/fl326fc7d-flipkart-logo-flipkart-logo-png-transparent-brands-logos.png'
                     height='40'
                     width='150'
                     alt=''
                     loading='lazy'
-                /></Navbar.Brand></Nav.Link>
+                /></Link></Navbar.Brand></Nav.Link>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 {userInfo === null ?
