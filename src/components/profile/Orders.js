@@ -13,11 +13,10 @@ function Orders() {
   function getOrdersData() {
     try {
       const setData = async () => {
-        const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap()
-        res.catch(e => {
+        const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap().catch(e => {
           console.log(e)
         })
-        console.log(res.data)
+        console.log(...res.data)
         dispatch(placedOrders([...res.data]))
       }
       setData()
