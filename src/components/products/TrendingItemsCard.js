@@ -2,10 +2,11 @@ import React from 'react'
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import { Container } from 'react-bootstrap';
+import "./products.css"
 
 function TrendingItemsCard(props) {
     return (
-        <Card className='product-card'>
+        <Card className='product-card m-3 trending-items'>
             <Card.Img variant="top" src={props.thumbnail} style={{ height: 170 }} />
             <Card.Body className='d-flex flex-column justify-content-between'>
                 <Container fluid className='p-0'>
@@ -20,7 +21,7 @@ function TrendingItemsCard(props) {
                             <Container fluid className='p-0'>
                                 <del><h6 className=" m-0"><span>&#36;</span>{props.price}</h6></del>
                                 <Badge bg="success">{Math.ceil(props.discount)} % Off</Badge>
-                                <h5 className=" m-0"><span>&#36;</span>{Math.ceil(props.price - props.price * props.discount / 100)}</h5>
+                                <h3 className=" m-0"><span>&#36;</span>{Math.ceil(props.price - props.price * props.discount / 100)}</h3>
                             </Container>
                         </Container>
                     </Container>

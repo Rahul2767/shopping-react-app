@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Container } from 'react-bootstrap';
+import React, { useEffect } from 'react'
+import { Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
 import { useGetOrdersMutation } from '../../features/usersApiSlice';
 import { placedOrders } from '../../features/authSlice';
@@ -9,14 +9,11 @@ function Orders() {
   const [getOrders] = useGetOrdersMutation()
   const dispatch = useDispatch()
 
-
-  function getOrdersData() {
+  useEffect(() => {
     try {
       const setData = async () => {
         console.log({ orderedBy: authState.userInfo.email })
-        const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap().catch(e => {
-          console.log(e)
-        })
+        const res = await getOrders({ orderedBy: authState.userInfo.email })
         console.log(...res.data)
         dispatch(placedOrders([...res.data]))
       }
@@ -24,12 +21,12 @@ function Orders() {
     } catch (error) {
       console.log(error)
     }
-  }
+  })
+
 
   return (
     <Container>
       <h1 className="display-6 text-center border-bottom">Orders</h1>
-      <Button onClick={getOrdersData}>Refresh</Button>
       <Container>
         <p>{
           authState.userOrders.length > 0 ? authState.userOrders.map(order => {

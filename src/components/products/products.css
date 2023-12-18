@@ -8,3 +8,7 @@
 .product-card{
     width: 100%;
 }
+
+.trending-items{
+    min-height: 450px;
+}

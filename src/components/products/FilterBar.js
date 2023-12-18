@@ -26,7 +26,7 @@ function FilterBar() {
     }
 
     return (
-        <Row className='mx-0'>
+        <Row className='mx-0 border-bottom'>
             <Col className='d-flex justify-content-end bg-dark py-2 m-0'>
                 <Dropdown >
                     <Dropdown.Toggle id="dropdown-basic" className='bg-dark p-0 border-0'>
