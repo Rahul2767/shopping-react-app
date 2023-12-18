@@ -12,7 +12,7 @@ function Orders() {
 
   async function getOrdersData() {
     try {
-      const res = await getOrders({ orderedBy: authState.userInfo.email })
+      const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap()
       console.log(res.data)
       dispatch(placedOrders([...res.data]))
     } catch (error) {
