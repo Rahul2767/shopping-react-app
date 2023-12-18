@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Button, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
 import { useGetOrdersMutation } from '../../features/usersApiSlice';
@@ -13,6 +13,7 @@ function Orders() {
   function getOrdersData() {
     try {
       const setData = async () => {
+        console.log({ orderedBy: authState.userInfo.email })
         const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap().catch(e => {
           console.log(e)
         })
