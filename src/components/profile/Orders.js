@@ -10,11 +10,14 @@ function Orders() {
   const dispatch = useDispatch()
 
 
-  async function getOrdersData() {
+  function getOrdersData() {
     try {
-      const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap()
-      console.log(res.data)
-      dispatch(placedOrders([...res.data]))
+      const setData = async () => {
+        const res = await getOrders({ orderedBy: authState.userInfo.email }).unwrap()
+        console.log(res.data)
+        dispatch(placedOrders([...res.data]))
+      }
+      setData()
     } catch (error) {
       console.log(error)
     }
