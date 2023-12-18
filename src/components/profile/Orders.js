@@ -9,35 +9,35 @@ function Orders() {
   const [getOrders] = useGetOrdersMutation()
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    console.log(authState.userInfo.email)
-    async function getOrdersData() {
-      try {
-        const res = await getOrders({ orderedBy: authState.userInfo.email })
-        dispatch(placedOrders([...res.data]))
-      } catch (error) {
-        console.log(error)
-      }
+
+  async function getOrdersData() {
+    try {
+      const res = await getOrders({ orderedBy: authState.userInfo.email })
+      console.log(res.data)
+      dispatch(placedOrders([...res.data]))
+    } catch (error) {
+      console.log(error)
     }
-    getOrdersData()
-  }, [dispatch])
+  }
+
   return (
+    <Container>
+      <h1 className="display-6 text-center border-bottom">Orders</h1>
+      <Button onClick={getOrdersData}>Refresh</Button>
       <Container>
-        <h1 className="display-6 text-center border-bottom">Orders</h1>
-        <Container>
-          <p>{
-            authState.userOrders.length > 0 ? authState.userOrders.map(order => {
-              return <div className='border mb-2 p-1 d-flex flex-column'>
-                <div className='border-bottom fs-6'><p>Order id - {order._id}</p></div>
-                <div className='d-flex justify-content-between'>
-                  <div className='display-6 fs-4'><p>Product - {order.productTitle}</p></div>
-                  <div className='fs-5 text-success'><p>Price - ${order.productPrice}</p></div>
-                </div>
+        <p>{
+          authState.userOrders.length > 0 ? authState.userOrders.map(order => {
+            return <div className='border mb-2 p-1 d-flex flex-column'>
+              <div className='border-bottom fs-6'><p>Order id - {order._id}</p></div>
+              <div className='d-flex justify-content-between'>
+                <div className='display-6 fs-4'><p>Product - {order.productTitle}</p></div>
+                <div className='fs-5 text-success'><p>Price - ${order.productPrice}</p></div>
               </div>
-            }) : <p>You have no orders yet</p>
-          }</p>
-        </Container>
-      </Container >
+            </div>
+          }) : <p>You have no orders yet</p>
+        }</p>
+      </Container>
+    </Container >
   )
 }
 
