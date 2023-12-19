@@ -19,7 +19,7 @@ function TrendingItems() {
             <p className='display-6 text-center'>Trending Products</p>
             <Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark">
                 <Carousel.Item>
-                    <Container fluid className='d-flex justify-content-between align-items-center'>
+                    <Container className='d-flex justify-content-between align-items-center'>
                         {
                             product.slice(8, 11).map(item => {
                                 return <TrendingItemsCard
@@ -35,7 +35,7 @@ function TrendingItems() {
                     </Container>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Container fluid className='d-flex justify-content-between align-items-center'>
+                    <Container className='d-flex justify-content-between align-items-center'>
                         {
                             product.slice(22, 25).map(item => {
                                 return <TrendingItemsCard
