@@ -21,8 +21,7 @@ function Orders() {
     } catch (error) {
       console.log(error)
     }
-  })
-
+  }, [dispatch])
 
   return (
     <Container>
