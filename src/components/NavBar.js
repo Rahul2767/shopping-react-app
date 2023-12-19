@@ -76,7 +76,7 @@ function NavBar() {
                         </NavDropdown>
 
 
-                        <Link to={'/cart'} className='text-secondary'><i className="bi bi-cart4 my-auto p-2">Cart</i>{cartItems.length > 0 ? <Badge bg="success">{cartItems.length}</Badge> : ''}</Link>
+                        <Nav.Link><Link to={'/cart'} className='text-secondary'><i className="bi bi-cart4 my-auto p-2">Cart</i>{cartItems.length > 0 ? <Badge bg="success">{cartItems.length}</Badge> : ''}</Link></Nav.Link>
 
                         {
                             userInfo === null ? <Nav.Link><i class="bi bi-box-arrow-right p-2">Login</i></Nav.Link> :
