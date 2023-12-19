@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container} from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Link, useNavigate } from 'react-router-dom'
@@ -16,7 +16,7 @@ function Login() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const [login] = useLoginMutation()
+    const [login, { isLoading }] = useLoginMutation()
 
     const { userInfo } = useSelector((state) => state.auth)
     useEffect(() => {
@@ -52,6 +52,9 @@ function Login() {
                             Login
                         </Button>
                     </Container>
+                    {isLoading ? <div class="spinner-border text-success" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div> : ''}
                     <Form.Text>Don't have any account? {' '} <Link to={'/signup'}>Signup</Link></Form.Text>
                 </Form>
             </Container>
