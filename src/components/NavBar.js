@@ -66,7 +66,7 @@ function NavBar() {
                 </Navbar.Collapse>
                 :
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto text-center">
 
                         <NavDropdown title={userInfo === null ? 'Account' : <i className="bi bi-person my-auto p-2">{userInfo.name}</i>} id="basic-nav-dropdown">
                             <NavDropdown.Item><Link to={'/orders'}>My orders</Link></NavDropdown.Item>
@@ -75,8 +75,8 @@ function NavBar() {
                             <NavDropdown.Item><Link to={'/feedback'}>Feedback</Link></NavDropdown.Item>
                         </NavDropdown>
 
-                        {cartItems.length > 0 ? <Badge bg="success">{cartItems.length}</Badge> : ''}
-                        <Link to={'/cart'} className='text-secondary'><i className="bi bi-cart4 my-auto p-2">Cart</i></Link>
+
+                        <Link to={'/cart'} className='text-secondary'><i className="bi bi-cart4 my-auto p-2">Cart</i>{cartItems.length > 0 ? <Badge bg="success">{cartItems.length}</Badge> : ''}</Link>
 
                         {
                             userInfo === null ? <Nav.Link><i class="bi bi-box-arrow-right p-2">Login</i></Nav.Link> :
