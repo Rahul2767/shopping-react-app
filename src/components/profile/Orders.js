@@ -26,7 +26,7 @@ function Orders() {
     <Container>
       <h1 className="display-6 text-center border-bottom">Orders</h1>
       <Container>
-        <p>{isLoading ? <div class="spinner-border m-5" role="status">
+        <p>{isLoading ? <div class="spinner-border mx-auto" role="status">
           <span class="sr-only"></span>
         </div> :
           authState.userOrders.length > 0 ? authState.userOrders.map(order => {

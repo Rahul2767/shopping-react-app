@@ -51,12 +51,13 @@ function Login() {
                         <Button variant="primary" type="submit" onClick={submitHandler}>
                             Login
                         </Button>
-                        {isLoading ? <div class="spinner-border text-success" role="status">
-                            <span class="sr-only"></span>
-                        </div> : ''}
+                        
                     </Container>
                     <Form.Text>Don't have any account? {' '} <Link to={'/signup'}>Signup</Link></Form.Text>
                 </Form>
+                {isLoading ? <div class="spinner-border text-success mx-auto" role="status">
+                            <span class="sr-only"></span>
+                        </div> : ''}
             </Container>
         </Container>
     )
