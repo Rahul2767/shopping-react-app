@@ -47,18 +47,19 @@ function Login() {
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </Form.Group>
-                    <Container fluid className='p-0 d-flex justify-content-center'>
+                    <Container fluid className='p-0 d-flex flex-column align-items-center justify-content-center'>
                         <Button variant="primary" type="submit" onClick={submitHandler}>
                             Login
                         </Button>
-                        
+                        {isLoading ? <div class="spinner-border text-success my-2" role="status">
+                            <span class="sr-only"></span>
+                        </div>  : ''}
                     </Container>
                     <Form.Text>Don't have any account? {' '} <Link to={'/signup'}>Signup</Link></Form.Text>
                 </Form>
-                {isLoading ? <div class="spinner-border text-success mx-auto" role="status">
-                            <span class="sr-only"></span>
-                        </div> : ''}
+                
             </Container>
+            
         </Container>
     )
 }

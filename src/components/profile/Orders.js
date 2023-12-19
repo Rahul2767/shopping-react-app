@@ -26,9 +26,10 @@ function Orders() {
     <Container>
       <h1 className="display-6 text-center border-bottom">Orders</h1>
       <Container>
-        <p>{isLoading ? <div class="spinner-border mx-auto" role="status">
+        {isLoading ? <Container className='d-flex justify-content-center'><div class="spinner-border text-success my-2" role="status">
           <span class="sr-only"></span>
-        </div> :
+        </div></Container>
+          :
           authState.userOrders.length > 0 ? authState.userOrders.map(order => {
             return <div className='border mb-2 p-1 d-flex flex-column'>
               <div className='border-bottom fs-6'><p>Order id - {order._id}</p></div>
@@ -38,7 +39,7 @@ function Orders() {
               </div>
             </div>
           }) : <p>You have no orders yet</p>
-        }</p>
+        }
       </Container>
     </Container >
   )
