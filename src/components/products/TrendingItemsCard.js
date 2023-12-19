@@ -7,12 +7,12 @@ import "./products.css"
 function TrendingItemsCard(props) {
     return (
         <Card className='product-card m-3 trending-items'>
-            <Card.Img variant="top" src={props.thumbnail} style={{ height: 170 }} />
+            <Card.Img variant="top" src={props.thumbnail} style={{ height: 150 }} />
             <Card.Body className='d-flex flex-column justify-content-between'>
                 <Container fluid className='p-0'>
                     <Card.Title>{props.title}</Card.Title>
-                    <Card.Text className='fs-6'>
-                        {props.description}
+                    <Card.Text className='fs-6 fifty-chars'>
+                        {props.description.slice(0,70)}....
                     </Card.Text>
                 </Container>
                 <Container fluid className='p-0'>
