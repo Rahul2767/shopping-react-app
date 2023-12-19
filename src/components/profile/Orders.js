@@ -10,16 +10,17 @@ function Orders() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    async function renderOrders() {
+    const renderOrders = async () => {
       try {
-        const res = await getOrders({ orderedBy: authState.userInfo.email })
-        dispatch(placedOrders([...res.data]))
+        const res = await getOrders({ orderedBy: authState.userInfo.email });
+        dispatch(placedOrders([...res.data]));
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
-    renderOrders()
-  })
+    };
+
+    renderOrders();
+  }, [authState.userInfo.email]);
 
   return (
     <Container>
