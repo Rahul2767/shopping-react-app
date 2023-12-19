@@ -21,7 +21,7 @@ function TrendingItems() {
                 <Carousel.Item>
                     <Container fluid className='d-flex justify-content-between align-items-center flex-wrap'>
                         <i class="bi bi-arrow-left-circle-fill fs-1"></i>
-                        {
+                        {/* {
                             product.slice(8, 11).map(item => {
                                 return <TrendingItemsCard
                                     key={item.id}
@@ -32,14 +32,14 @@ function TrendingItems() {
                                     discount={item.discountPercentage}
                                 />
                             })
-                        }
+                        } */}
                         <i class="bi bi-arrow-right-circle-fill fs-1"></i>
                     </Container>
                 </Carousel.Item>
                 <Carousel.Item>
                     <Container fluid className='d-flex justify-content-between align-items-center flex-wrap'>
                         <i class="bi bi-arrow-left-circle-fill fs-1"></i>
-                        {
+                        {/* {
                             product.slice(22, 25).map(item => {
                                 return <TrendingItemsCard
                                     key={item.id}
@@ -50,7 +50,7 @@ function TrendingItems() {
                                     discount={item.discountPercentage}
                                 />
                             })
-                        }
+                        } */}
                         <i class="bi bi-arrow-right-circle-fill fs-1"></i>
                     </Container>
                 </Carousel.Item>
