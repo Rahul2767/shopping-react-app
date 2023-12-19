@@ -27,18 +27,18 @@ function Footer() {
                             <h5 className="text-uppercase">About</h5>
 
                             <ul className="list-unstyled mb-0">
-                                <li>
+                                <li><Link>
                                     Contact us
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     About us
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Careers
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Support
-                                </li>
+                                </Link></li>
                             </ul>
                         </div>
 
@@ -46,18 +46,18 @@ function Footer() {
                             <h5 className="text-uppercase">Help</h5>
 
                             <ul className="list-unstyled mb-0">
-                                <li>
+                                <li><Link>
                                     Payments
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Shipping
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Cancellation & Returns
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     FAQ
-                                </li>
+                                </Link></li>
                             </ul>
                         </div>
 
@@ -65,18 +65,18 @@ function Footer() {
                             <h5 className="text-uppercase">Consumer Policy</h5>
 
                             <ul className="list-unstyled mb-0">
-                                <li>
+                                <li><Link>
                                     Cancellation & Returns
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Terms of use
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Security
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Privacy
-                                </li>
+                                </Link></li>
                             </ul>
                         </div>
 
@@ -84,15 +84,15 @@ function Footer() {
                             <h5 className="text-uppercase">Social</h5>
 
                             <ul className="list-unstyled mb-0">
-                                <li>
+                                <li><Link>
                                     Facebook
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Twitter
-                                </li>
-                                <li>
+                                </Link></li>
+                                <li><Link>
                                     Instagram
-                                </li>
+                                </Link></li>
                             </ul>
                         </div>
                     </div>
