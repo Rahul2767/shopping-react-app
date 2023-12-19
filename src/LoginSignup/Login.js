@@ -36,7 +36,7 @@ function Login() {
     };
 
     return (
-        <Container fluid className='p-0 bg-light'>
+        <Container fluid className='bg-light'>
             <ToastContainer></ToastContainer>
             <Container className='d-flex justify-content-center'>
                 <Form className='p-4 border rounded my-3'>

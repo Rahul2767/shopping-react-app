@@ -50,27 +50,27 @@ function Products() {
             <Container fluid className='p-0 bg-light'>
                 <FilterBar />
                 <p className='display-6 border-bottom text-center'>Products</p>
-                {isLoading ? <Loader /> :
-                    <Container fluid className='products p-2' >
-                        {
-                            (product.filter ? product.filteredProducts : product.products).slice(0, showMore)?.map(productItem => {
-                                return (
-                                    <Product
-                                        id={productItem.id}
-                                        key={productItem.id}
-                                        title={productItem.title}
-                                        thumbnail={productItem.thumbnail}
-                                        description={productItem.description}
-                                        price={productItem.price}
-                                        stock={productItem.stock}
-                                        rating={productItem.rating}
-                                        discount={productItem.discountPercentage}
-                                        showImages={handleShow}
-                                    />
-                                )
-                            })
-                        }
-                    </Container>}
+
+                <Container fluid className='products p-2' >
+                    {
+                        (product.filter ? product.filteredProducts : product.products).slice(0, showMore)?.map(productItem => {
+                            return (
+                                <Product
+                                    id={productItem.id}
+                                    key={productItem.id}
+                                    title={productItem.title}
+                                    thumbnail={productItem.thumbnail}
+                                    description={productItem.description}
+                                    price={productItem.price}
+                                    stock={productItem.stock}
+                                    rating={productItem.rating}
+                                    discount={productItem.discountPercentage}
+                                    showImages={handleShow}
+                                />
+                            )
+                        })
+                    }
+                </Container>
                 {showMore <= product.products.length ? <Container className='d-flex justify-content-center my-2'><Button onClick={() => {
                     setShowMore(showMore + 8)
                 }}>Show More</Button></Container> : ''}

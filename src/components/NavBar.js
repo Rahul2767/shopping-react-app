@@ -30,62 +30,65 @@ function NavBar() {
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary position-sticky fixed-top border">
-            <Container fluid>
-                <Nav.Link><Navbar.Brand className='ms-2'> <Link to={'/'}><img
-                    src='https://www.liblogo.com/img-logo/max/fl326fc7d-flipkart-logo-flipkart-logo-png-transparent-brands-logos.png'
-                    height='40'
-                    width='150'
-                    alt=''
-                    loading='lazy'
-                /></Link></Navbar.Brand></Nav.Link>
+            <Nav.Link><Navbar.Brand className='ms-2'> <Link to={'/'}><img
+                src='https://www.liblogo.com/img-logo/max/fl326fc7d-flipkart-logo-flipkart-logo-png-transparent-brands-logos.png'
+                height='40'
+                width='150'
+                alt=''
+                loading='lazy'
+            /></Link></Navbar.Brand></Nav.Link>
 
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                {userInfo === null ?
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <i className="bi bi-person-plus-fill my-auto ms-2"></i>
-                            <Nav.Link><Link to={'/signup'}>Signup </Link></Nav.Link>
-                            <i className="bi bi-box-arrow-right my-auto ms-3"></i>
-                            <Nav.Link><Link to={'/login'}>Login </Link></Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                    :
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <Form className="d-flex me-3 align-items-center">
-                                <Form.Control
-                                    type="search"
-                                    placeholder="Search"
-                                    aria-label="Search"
-                                    className='me-2 py-1'
-                                />
-                            </Form>
-                            <i className="bi bi-person my-auto ms-3"></i>
-                            <NavDropdown title={userInfo === null ? 'Account' : userInfo.name} id="basic-nav-dropdown">
+            <Form className="d-flex me-3 align-items-center">
+                <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                    className='me-2 py-1'
+                />
+            </Form>
+
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            {userInfo === null ?
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto text-center">
+
+                        <Nav.Link>
+                            <Link to={'/signup'}>
+                                <i className="bi bi-person-plus-fill">{" "}Sign Up</i>
+                            </Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to={'/login'}>
+                                <i className="bi bi-box-arrow-right">{" "}Log In</i>
+                            </Link>
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+                :
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto text-center">
+
+                        <div className='d-flex align-items-center'>
+
+                            <NavDropdown title={userInfo === null ? 'Account' : <i className="bi bi-person my-auto p-2">{userInfo.name}</i>} id="basic-nav-dropdown">
                                 <NavDropdown.Item><Link to={'/orders'}>My orders</Link></NavDropdown.Item>
                                 <NavDropdown.Item><Link to={'/profileUpdate'}>Profile update</Link></NavDropdown.Item>
                                 <NavDropdown.Item><Link to={'/support'}>Support</Link></NavDropdown.Item>
                                 <NavDropdown.Item><Link to={'/feedback'}>Feedback</Link></NavDropdown.Item>
                             </NavDropdown>
 
-                            <div className='d-flex flex-column align-items-center ms-3'>
-                                {cartItems.length > 0 ? <Badge bg="success">{cartItems.length}</Badge> : ''}
-                                <i className="bi bi-cart4 my-auto"></i>
-                            </div>
+                            {cartItems.length > 0 ? <Badge bg="success">{cartItems.length}</Badge> : ''}
+                            <Link to={'/cart'} className='text-secondary'><i className="bi bi-cart4 my-auto p-2">Cart</i></Link>
 
-                            <Nav.Link >
-                                <Link to={'/cart'} className='text-secondary'> Cart</Link>
-                            </Nav.Link>
-
-
-                            <i className="bi bi-box-arrow-left my-auto ms-3"></i>
                             {
-                                userInfo === null ? <Nav.Link>Login</Nav.Link> :
-                                    <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
+                                userInfo === null ? <Nav.Link><i class="bi bi-box-arrow-right p-2">Login</i></Nav.Link> :
+                                    <Nav.Link onClick={logoutHandler}><i class="bi bi-box-arrow-right p-2">Logout</i></Nav.Link>
                             }
-                        </Nav>
-                    </Navbar.Collapse>}
-            </Container>
+                        </div>
+
+                    </Nav>
+                </Navbar.Collapse>}
+
         </Navbar>
     )
 }
