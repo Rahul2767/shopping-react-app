@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 const baseQuery = fetchBaseQuery({
-    baseUrl : 'https://shopping-react-app-api.vercel.app',
+    baseUrl : 'https://shopping-react-app-backend.onrender.com',
     credentials:"include"
 })
 
