@@ -69,11 +69,15 @@ function Products() {
                                 />
                             )
                         })
+
                     }
                 </Container>
-                {showMore <= product.products.length ? <Container className='d-flex justify-content-center my-2'><Button onClick={() => {
-                    setShowMore(showMore + 8)
-                }}>Show More</Button></Container> : ''}
+                {
+                    product.filter && product.filteredProducts.length === 0 ? <p>No products found for your search</p> : showMore <= product.products.length ? <Container className='d-flex justify-content-center my-2'><Button onClick={() => {
+                        setShowMore(showMore + 8)
+                    }}>Show More</Button></Container> : ''
+                }
+
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                     </Modal.Header>

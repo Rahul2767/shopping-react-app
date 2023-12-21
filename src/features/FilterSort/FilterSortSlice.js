@@ -42,6 +42,17 @@ export const FilterSortSlice = createSlice({
                 })
             }
         },
+        filterBySearch: (state, action) => {
+            if (action.payload === '') {
+                state.filter = false
+            }
+            else {
+                state.filter = true
+                state.filteredProducts = state.products.filter((item) => {
+                    return item.title.toLowerCase().includes(action.payload.toLowerCase())
+                })
+            }
+        },
         fetchProducts: (state, action) => {
             state.products = action.payload
         },
@@ -68,6 +79,6 @@ export const FilterSortSlice = createSlice({
     },
 })
 
-export const {emptyCart, removeFromCart, updateCartItemQuantity, addToCart, sortByAvailability, sortByPrice, sortByDiscount, sortByRating, filterByCategory, fetchProducts } = FilterSortSlice.actions
+export const {filterBySearch, emptyCart, removeFromCart, updateCartItemQuantity, addToCart, sortByAvailability, sortByPrice, sortByDiscount, sortByRating, filterByCategory, fetchProducts } = FilterSortSlice.actions
 export default FilterSortSlice.reducer
 

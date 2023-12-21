@@ -10,6 +10,7 @@ import { logout } from '../features/authSlice';
 import { useLogoutMutation } from '../features/usersApiSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import Badge from 'react-bootstrap/esm/Badge';
+import { filterBySearch } from '../features/FilterSort/FilterSortSlice';
 
 function NavBar() {
     const userInfo = useSelector((state) => state.auth.userInfo)
@@ -28,6 +29,10 @@ function NavBar() {
         }
     }
 
+    const searchItems = (value) => {
+        dispatch(filterBySearch(value))
+    }
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary position-sticky fixed-top border">
             <Nav.Link><Navbar.Brand className='ms-2'> <Link to={'/'}><img
@@ -44,6 +49,7 @@ function NavBar() {
                     placeholder="Search"
                     aria-label="Search"
                     className='me-2 py-1'
+                    onChange={(e) => searchItems(e.target.value)}
                 />
             </Form>
 
