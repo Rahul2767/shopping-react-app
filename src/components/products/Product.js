@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/esm/Container';
 import './products.css'
 import { addToCart } from '../../features/FilterSort/FilterSortSlice';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Toast from 'react-bootstrap/Toast';
 
 function Product(props) {
@@ -52,7 +52,7 @@ function Product(props) {
             <Card.Img onClick={() => { props.showImages(props.id) }} variant="top" src={props.thumbnail} style={{ height: 170 }} />
             <Card.Body className='d-flex flex-column justify-content-between'>
                 <Container fluid className='p-0'>
-                    <Card.Title>{props.title}</Card.Title>
+                    <Link><Card.Title onClick={() => { props.showImages(props.id) }}>{props.title}</Card.Title></Link>
                     <Card.Text className='fs-6'>
                         {props.description}
                     </Card.Text>
