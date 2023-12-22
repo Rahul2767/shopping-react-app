@@ -5,7 +5,6 @@ import Product from './Product'
 import './products.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../features/FilterSort/FilterSortSlice'
-import Loader from './Loader'
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button } from 'react-bootstrap'
@@ -14,7 +13,6 @@ import TrendingItems from './TrendingItems'
 function Products() {
     const product = useSelector(state => state.FilterSort)
     const dispatch = useDispatch()
-    let [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         fetch('https://dummyjson.com/products')
             .then((response) => {
