@@ -22,12 +22,6 @@ function Products() {
             })
     }, [dispatch])
 
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 1000)
-    })
-
     const [show, setShow] = useState(false);
     const [images, setImages] = useState(null)
 
