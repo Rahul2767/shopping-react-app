@@ -14,10 +14,10 @@ function Products() {
     const product = useSelector(state => state.FilterSort)
     const dispatch = useDispatch()
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
+        fetch('https://shopping-react-app-backend.onrender.com/products')
             .then((response) => {
                 response.json().then((result) => {
-                    dispatch(fetchProducts(result.products));
+                    dispatch(fetchProducts(result));
                 })
             })
     }, [dispatch])
