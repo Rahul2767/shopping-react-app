@@ -76,8 +76,8 @@ export const FilterSortSlice = createSlice({
     emptyCart: (state) => {
       state.cartItems = [];
     },
-    darkMode: (state, action) => {
-      state.darkMode = action.payload;
+    darkMode: (state) => {
+      state.darkMode = !state.darkMode;
     },
   },
 });
