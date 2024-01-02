@@ -4,13 +4,13 @@ import Col from "react-bootstrap/Col";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch } from "react-redux";
 import { Form } from "react-bootstrap";
-import darkMode from "../../features/FilterSort/FilterSortSlice";
 import {
   filterByCategory,
   sortByAvailability,
   sortByDiscount,
   sortByPrice,
   sortByRating,
+  darkMode,
 } from "../../features/FilterSort/FilterSortSlice";
 
 function FilterBar() {
