@@ -37,7 +37,7 @@ function FilterBar() {
   }
 
   return (
-    <Row className="mx-0 border-bottom d-flex justify-content-between">
+    <Row className="mx-0 my-1 border-bottom d-flex justify-content-between">
       <Col className="d-flex align-items-center">
         <Form>
           <Form.Check
@@ -45,7 +45,6 @@ function FilterBar() {
             type="switch"
             id="custom-switch"
             label="Dark Mode"
-            checked={darkMode}
           />
         </Form>
       </Col>
