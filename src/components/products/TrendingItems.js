@@ -13,7 +13,7 @@ function TrendingItems() {
     setIndex(selectedIndex);
   };
 
-  const darkClasses = darkMode ? "border trending-items" : "border";
+  const darkClasses = darkMode ? "border-top trending-items" : "border";
 
   return (
     <Container fluid className={darkClasses}>
