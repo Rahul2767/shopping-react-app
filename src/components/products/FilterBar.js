@@ -33,15 +33,16 @@ function FilterBar() {
   }
 
   function enableDarkMode() {
-    dispatch(darkMode(true));
+    dispatch(darkMode());
   }
 
   return (
     <Row className="mx-0 border-bottom d-flex justify-content-between">
       <Col className="d-flex align-items-center">
         <Form>
-          <Form.Toggle
+          <Form.Check
             onChange={enableDarkMode}
+            type="switch"
             id="custom-switch"
             label="Dark Mode"
             checked={darkMode}
