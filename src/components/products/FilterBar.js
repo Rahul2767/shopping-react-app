@@ -32,8 +32,8 @@ function FilterBar() {
   }
 
   return (
-    <Row className="mx-0 border-bottom">
-      <Col>
+    <Row className="mx-0 border-bottom d-flex justify-content-between">
+      <Col className="d-flex align-items-center">
         <Form>
           <Form.Check // prettier-ignore
             type="switch"
@@ -42,7 +42,7 @@ function FilterBar() {
           />
         </Form>
       </Col>
-      <Col className="d-flex justify-content-between bg-dark py-2 m-0">
+      <Col className="d-flex align-items-center">
         <Dropdown>
           <Dropdown.Toggle id="dropdown-basic" className="bg-dark p-0 border-0">
             Sortby
