@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch } from "react-redux";
 import { Form } from "react-bootstrap";
+import { darkMode } from "../../features/FilterSort/FilterSortSlice";
 import {
   filterByCategory,
   sortByAvailability,
@@ -31,14 +32,19 @@ function FilterBar() {
     dispatch(filterByCategory(type));
   }
 
+  function enableDarkMode() {
+    dispatch(darkMode(true));
+  }
+
   return (
     <Row className="mx-0 border-bottom d-flex justify-content-between">
       <Col className="d-flex align-items-center">
         <Form>
           <Form.Check // prettier-ignore
-            type="switch"
+            onChange={enableDarkMode}
             id="custom-switch"
             label="Dark Mode"
+            checked={darkMode}
           />
         </Form>
       </Col>
