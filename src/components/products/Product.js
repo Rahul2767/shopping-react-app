@@ -138,7 +138,7 @@ function Product(props) {
             </Button>
             <Button
               onClick={addToCartHandler}
-              variant={darkMode ? "success" : "outline-success"}
+              variant={darkMode ? "info" : "outline-info"}
             >
               Add to Cart
             </Button>
