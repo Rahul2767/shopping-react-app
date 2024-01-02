@@ -36,7 +36,7 @@ function NavBar() {
   return (
     <Navbar
       expand="lg"
-      className="bg-body-tertiary position-sticky fixed-top border"
+      className="bg-body-tertiary position-sticky fixed-top border navbar-dark"
     >
       <Nav.Link>
         <Navbar.Brand className="ms-2">
