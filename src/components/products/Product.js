@@ -132,13 +132,13 @@ function Product(props) {
           <Container fluid className="p-0 d-flex justify-content-between">
             <Button
               onClick={buyNowHandler}
-              variant={darkMode ? "outline-success" : "success"}
+              variant={darkMode ? "success" : "outline-success"}
             >
               Buy Now
             </Button>
             <Button
               onClick={addToCartHandler}
-              variant={darkMode ? "outline-success" : "success"}
+              variant={darkMode ? "success" : "outline-success"}
             >
               Add to Cart
             </Button>
