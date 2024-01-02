@@ -40,7 +40,7 @@ function Products() {
 
   return (
     <>
-      <Container fluid className="p-0 bg-light">
+      <Container fluid className="p-0 bg-light main-screen">
         <FilterBar />
         <p className="display-6 border-bottom text-center">Products</p>
 
