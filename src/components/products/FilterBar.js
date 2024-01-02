@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch } from "react-redux";
+import { Form } from "react-bootstrap";
 import {
   filterByCategory,
   sortByAvailability,
