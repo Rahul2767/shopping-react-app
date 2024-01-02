@@ -35,8 +35,8 @@ function NavBar() {
   };
 
   const darkClasses = darkMode
-    ? "bg-body-tertiary position-sticky fixed-top border navbar-dark"
-    : "bg-body-tertiary position-sticky fixed-top border";
+    ? "bg-body-tertiary position-sticky fixed-top border navbar-dark text-white"
+    : "bg-body-tertiary position-sticky fixed-top border text-dark";
 
   return (
     <Navbar expand="lg" className={darkClasses}>

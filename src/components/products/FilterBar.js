@@ -48,7 +48,7 @@ function FilterBar() {
           />
         </Form>
       </Col>
-      <Col className="d-flex align-items-center justify-content-end">
+      <Col className="d-flex align-items-center justify-content-end my-2">
         <Dropdown>
           <Dropdown.Toggle id="dropdown-basic" className="p-1 border-0">
             Sortby
