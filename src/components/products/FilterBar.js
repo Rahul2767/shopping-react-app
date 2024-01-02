@@ -42,9 +42,9 @@ function FilterBar() {
           />
         </Form>
       </Col>
-      <Col className="d-flex align-items-center">
+      <Col className="d-flex align-items-center justify-content-end">
         <Dropdown>
-          <Dropdown.Toggle id="dropdown-basic" className="bg-dark p-0 border-0">
+          <Dropdown.Toggle id="dropdown-basic" className="bg-dark p-1 border-0">
             Sortby
           </Dropdown.Toggle>
 
@@ -64,7 +64,7 @@ function FilterBar() {
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown className="ps-4">
-          <Dropdown.Toggle id="dropdown-basic" className="bg-dark p-0 border-0">
+          <Dropdown.Toggle id="dropdown-basic" className="bg-dark p-1 border-0">
             Filter
           </Dropdown.Toggle>
 
