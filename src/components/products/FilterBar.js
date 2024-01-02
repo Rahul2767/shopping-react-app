@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch } from "react-redux";
 import { Form } from "react-bootstrap";
-import { darkMode } from "../../features/FilterSort/FilterSortSlice";
+import darkMode from "../../features/FilterSort/FilterSortSlice";
 import {
   filterByCategory,
   sortByAvailability,
