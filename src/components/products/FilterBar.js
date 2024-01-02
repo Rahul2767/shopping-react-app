@@ -40,7 +40,7 @@ function FilterBar() {
     <Row className="mx-0 border-bottom d-flex justify-content-between">
       <Col className="d-flex align-items-center">
         <Form>
-          <Form.Check // prettier-ignore
+          <Form.Toggle
             onChange={enableDarkMode}
             id="custom-switch"
             label="Dark Mode"

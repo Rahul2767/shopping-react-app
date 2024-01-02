@@ -35,7 +35,7 @@ function NavBar() {
   };
 
   const darkClasses = darkMode
-    ? "bg-body-tertiary position-sticky fixed-top border nav-dark"
+    ? "bg-body-tertiary position-sticky fixed-top border navbar-dark"
     : "bg-body-tertiary position-sticky fixed-top border";
 
   return (
