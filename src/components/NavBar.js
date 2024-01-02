@@ -34,7 +34,10 @@ function NavBar() {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body position-sticky fixed-top border">
+    <Navbar
+      expand="lg"
+      className="bg-body-tertiary position-sticky fixed-top border"
+    >
       <Nav.Link>
         <Navbar.Brand className="ms-2">
           {" "}

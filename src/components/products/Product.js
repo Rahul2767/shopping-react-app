@@ -46,7 +46,7 @@ function Product(props) {
   };
 
   return (
-    <Card className="product-card position-relative border">
+    <Card className="product-card position-relative">
       <Card.Img
         onClick={() => {
           props.showImages(props.id);
