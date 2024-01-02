@@ -14,9 +14,7 @@ import { filterBySearch } from "../features/FilterSort/FilterSortSlice";
 
 function NavBar() {
   const userInfo = useSelector((state) => state.auth.userInfo);
-  const darkMode = useSelector((state) => {
-    state.FilterSort.darkMode;
-  });
+  const darkMode = useSelector((state) => state.FilterSort.darkMode);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [logoutApiCall] = useLogoutMutation();
