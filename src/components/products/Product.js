@@ -12,6 +12,7 @@ import Toast from "react-bootstrap/Toast";
 
 function Product(props) {
   const rating = props.rating;
+  const darkMode = useSelector((state) => state.FilterSort.darkMode);
   const fullStars = Number(Math.floor(rating));
   const halfStar = rating - fullStars > 0.5 ? false : true;
   const dispatch = useDispatch();
@@ -45,8 +46,12 @@ function Product(props) {
     }
   };
 
+  const darkClasses = darkMode
+    ? "product-card position-relative product-card-dark"
+    : "product-card position-relative";
+
   return (
-    <Card className="product-card position-relative">
+    <Card className={darkClasses}>
       <Card.Img
         onClick={() => {
           props.showImages(props.id);

@@ -14,6 +14,9 @@ import { filterBySearch } from "../features/FilterSort/FilterSortSlice";
 
 function NavBar() {
   const userInfo = useSelector((state) => state.auth.userInfo);
+  const darkMode = useSelector((state) => {
+    state.FilterSort.darkMode;
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [logoutApiCall] = useLogoutMutation();
@@ -33,11 +36,12 @@ function NavBar() {
     dispatch(filterBySearch(value));
   };
 
+  const darkClasses = darkMode
+    ? "bg-body-tertiary position-sticky fixed-top border nav-dark"
+    : "bg-body-tertiary position-sticky fixed-top border";
+
   return (
-    <Navbar
-      expand="lg"
-      className="bg-body-tertiary position-sticky fixed-top border navbar-dark"
-    >
+    <Navbar expand="lg" className={darkClasses}>
       <Nav.Link>
         <Navbar.Brand className="ms-2">
           {" "}

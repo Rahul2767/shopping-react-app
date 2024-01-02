@@ -6,15 +6,17 @@ import TrendingItemsCard from "./TrendingItemsCard";
 
 function TrendingItems() {
   const product = useSelector((state) => state.FilterSort.products);
-
+  const darkMode = useSelector((state) => state.FilterSort.darkMode);
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
 
+  const darkClasses = darkMode ? "border trending-items" : "border";
+
   return (
-    <Container fluid className="border trending-items">
+    <Container fluid className={darkClasses}>
       <p className="display-6 text-center">Trending Products</p>
       <Carousel
         activeIndex={index}

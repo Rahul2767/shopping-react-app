@@ -12,6 +12,7 @@ import TrendingItems from "./TrendingItems";
 
 function Products() {
   const product = useSelector((state) => state.FilterSort);
+  const darkMode = useSelector((state) => state.FilterSort.darkMode);
   const dispatch = useDispatch();
   useEffect(() => {
     fetch("https://shopping-react-app-backend.onrender.com/products").then(
@@ -38,9 +39,11 @@ function Products() {
 
   const [showMore, setShowMore] = useState(8);
 
+  const darkClasses = darkMode ? "p-0 bg-light main-screen" : "p-0 bg-light";
+
   return (
     <>
-      <Container fluid className="p-0 bg-light main-screen">
+      <Container fluid className={darkClasses}>
         <FilterBar />
         <p className="display-6 border-bottom text-center">Products</p>
 
