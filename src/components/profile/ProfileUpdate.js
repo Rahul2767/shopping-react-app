@@ -1,5 +1,5 @@
 import React from "react";
-import Form, { Container } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 
 function ProfileUpdate() {
   return (
