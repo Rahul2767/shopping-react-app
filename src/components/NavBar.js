@@ -89,7 +89,15 @@ function NavBar() {
                 userInfo === null ? (
                   "Account"
                 ) : (
-                  <i className="bi bi-person my-auto p-2">{userInfo.name}</i>
+                  <i
+                    className={
+                      darkMode
+                        ? "bi bi-person my-auto p-2 text-white"
+                        : "bi bi-person my-auto p-2"
+                    }
+                  >
+                    {userInfo.name}
+                  </i>
                 )
               }
               id="basic-nav-dropdown"
@@ -109,7 +117,10 @@ function NavBar() {
             </NavDropdown>
 
             <Nav.Link>
-              <Link to={"/cart"} className="text-secondary">
+              <Link
+                to={"/cart"}
+                className={darkMode ? "text-secondary" : "text-white"}
+              >
                 <i className="bi bi-cart4 my-auto p-2">Cart</i>
                 {cartItems.length > 0 ? (
                   <Badge bg="success">{cartItems.length}</Badge>
@@ -121,11 +132,27 @@ function NavBar() {
 
             {userInfo === null ? (
               <Nav.Link>
-                <i class="bi bi-box-arrow-right p-2">Login</i>
+                <i
+                  className={
+                    darkMode
+                      ? "bi bi-box-arrow-right p-2 text-white"
+                      : "bi bi-box-arrow-right p-2"
+                  }
+                >
+                  Login
+                </i>
               </Nav.Link>
             ) : (
               <Nav.Link onClick={logoutHandler}>
-                <i class="bi bi-box-arrow-right p-2">Logout</i>
+                <i
+                  className={
+                    darkMode
+                      ? "bi bi-box-arrow-right p-2 text-white"
+                      : "bi bi-box-arrow-right p-2"
+                  }
+                >
+                  Logout
+                </i>
               </Nav.Link>
             )}
           </Nav>
