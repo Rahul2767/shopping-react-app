@@ -1,44 +1,30 @@
-import React from "react";
-import "react-step-progress-bar/styles.css";
-import { ProgressBar, Step } from "react-step-progress-bar";
+import React, { useState } from "react";
+import { ProgressBar } from "react-step-progress-bar";
 
-class OrderTrackingBar extends React.Component {
-  render() {
-    return (
+function OrderTrackingBar() {
+  const orderStatus = "Shipped";
+
+  const steps = ["Placed", "Confirmed", "Shipped", "Deliverd"];
+  const labels = {
+    Placed: "Your order has been placed",
+    Confirmed: "You order has been confirmed",
+    Shipped: "Your order has been shipped",
+    Delivered: "Your order has been delivered",
+  };
+  const percent = (steps.indexOf(orderStatus) + 1) * 25;
+
+  return (
+    <div className="order-tracking">
+      <h1>Order Tracking</h1>
       <ProgressBar
-        percent={75}
-        filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
-      >
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-              width="30"
-              src="https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/9d/Pichu.png/revision/latest?cb=20170407222851"
-            />
-          )}
-        </Step>
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-              width="30"
-              src="https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/97/Pikachu_%28Smiling%29.png/revision/latest?cb=20170410234508"
-            />
-          )}
-        </Step>
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-              width="30"
-              src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png"
-            />
-          )}
-        </Step>
-      </ProgressBar>
-    );
-  }
+        percent={percent}
+        steps={steps}
+        filledBackground="#00bfff"
+        text={orderStatus}
+      />
+      <p>{labels[orderStatus]}</p>
+    </div>
+  );
 }
 
 export default OrderTrackingBar;
