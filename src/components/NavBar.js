@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -117,11 +116,16 @@ function NavBar() {
             </NavDropdown>
 
             <Nav.Link>
-              <Link
-                to={"/cart"}
-                className={darkMode ? "text-secondary" : "text-white"}
-              >
-                <i className="bi bi-cart4 my-auto p-2">Cart</i>
+              <Link to={"/cart"} className="text-secondary">
+                <i
+                  className={
+                    darkMode
+                      ? "bi bi-cart4 my-auto p-2 text-white"
+                      : "bi bi-cart4 my-auto p-2"
+                  }
+                >
+                  Cart
+                </i>
                 {cartItems.length > 0 ? (
                   <Badge bg="success">{cartItems.length}</Badge>
                 ) : (

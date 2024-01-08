@@ -9,19 +9,18 @@ import Modal from "react-bootstrap/Modal";
 import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
 import TrendingItems from "./TrendingItems";
+import Banner from "./Banner";
 
 function Products() {
   const product = useSelector((state) => state.FilterSort);
   const darkMode = useSelector((state) => state.FilterSort.darkMode);
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch("https://shopping-react-app-backend.onrender.com/products").then(
-      (response) => {
-        response.json().then((result) => {
-          dispatch(fetchProducts(result));
-        });
-      }
-    );
+    fetch("http://localhost:8000/products").then((response) => {
+      response.json().then((result) => {
+        dispatch(fetchProducts(result));
+      });
+    });
   }, [dispatch]);
 
   const [show, setShow] = useState(false);
@@ -44,6 +43,7 @@ function Products() {
   return (
     <>
       <Container fluid className={darkClasses}>
+        <Banner />
         <FilterBar />
         <p className="display-6 border-bottom text-center">Products</p>
 

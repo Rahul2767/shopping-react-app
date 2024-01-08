@@ -6,37 +6,37 @@ function Footer() {
     <footer className="bg-dark text-white text-center border-top">
       <div className="container p-4">
         <section className="mb-4">
-          <a
+          <Link
             data-mdb-ripple-init
             className="btn btn-outline btn-floating m-1"
             role="button"
           >
             <i className="bi bi-facebook text-white"></i>
-          </a>
+          </Link>
 
-          <a
+          <Link
             data-mdb-ripple-init
             className="btn btn-outline btn-floating m-1"
             role="button"
           >
             <i className="bi bi-twitter text-white"></i>
-          </a>
+          </Link>
 
-          <a
+          <Link
             data-mdb-ripple-init
             className="btn btn-outline btn-floating m-1"
             role="button"
           >
             <i className="bi bi-google text-white"></i>
-          </a>
+          </Link>
 
-          <a
+          <Link
             data-mdb-ripple-init
             className="btn btn-outline btn-floating m-1"
             role="button"
           >
             <i className="bi bi-instagram text-white"></i>
-          </a>
+          </Link>
         </section>
 
         <section className="">
@@ -119,7 +119,7 @@ function Footer() {
 
       <div className="text-center p-3">
         © 2024 Copyright:
-        <a className="text-reset fw-bold">Flipkart.com</a>
+        <Link className="text-reset fw-bold">Flipkart.com</Link>
       </div>
     </footer>
   );
