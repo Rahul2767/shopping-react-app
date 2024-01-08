@@ -16,11 +16,13 @@ function Products() {
   const darkMode = useSelector((state) => state.FilterSort.darkMode);
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch("http://localhost:8000/products").then((response) => {
-      response.json().then((result) => {
-        dispatch(fetchProducts(result));
-      });
-    });
+    fetch("https://shopping-react-app-backend.onrender.com/products").then(
+      (response) => {
+        response.json().then((result) => {
+          dispatch(fetchProducts(result));
+        });
+      }
+    );
   }, [dispatch]);
 
   const [show, setShow] = useState(false);
